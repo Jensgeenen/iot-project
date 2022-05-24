@@ -1,6 +1,6 @@
 from pushbullet import Pushbullet
 
-API_KEY = "o.QCdVDvNwBIEaJxVsaUmDe50lm5KaQ8f9"
+API_KEY = "token"
 filename = 'resolution.txt'
 
 with open(filename, mode='r') as f:
