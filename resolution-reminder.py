@@ -31,7 +31,7 @@ def readadc(adcnum):
 		adcout = ((r[1]&3) << 8) + r[2] 
 		return adcout 
 
-def push():
+def push1():
 
 	API_KEY = "o.QCdVDvNwBIEaJxVsaUmDe50lm5KaQ8f9"
 	filename = 'resolution.txt'
@@ -41,13 +41,32 @@ def push():
 		with open(filename, mode='r') as f:
 			text = f.read()
 		pb = Pushbullet(API_KEY)
-		push = pb.push_note("This is the title", text)
+		push = pb.push_note("This is the hive 1", text)
 
 	if (tmp1 > 200 ):
 		with open(filename2, mode='r') as f2:
 			text2 = f2.read()
 		pb = Pushbullet(API_KEY)
-		push = pb.push_note("This is the title", text2)
+		push = pb.push_note("This is the hive 1", text2)
+
+def push2():
+
+	API_KEY = "o.QCdVDvNwBIEaJxVsaUmDe50lm5KaQ8f9"
+	filename = 'resolution.txt'
+	filename2 = 'resolution2.txt'
+
+	if (tmp0 > 200 ):
+		with open(filename, mode='r') as f:
+			text = f.read()
+		pb = Pushbullet(API_KEY)
+		push = pb.push_note("This is the hive 2", text)
+
+	if (tmp1 > 200 ):
+		with open(filename2, mode='r') as f2:
+			text2 = f2.read()
+		pb = Pushbullet(API_KEY)
+		push = pb.push_note("This is the hive 2", text2)
+
 		
 
 
@@ -58,7 +77,8 @@ try:
 		tmp1 = readadc(1) # read channel 1
 		print ("input0:",tmp0)
 		print ("input1:",tmp1)
-		push()
+		push1()
+		push2()
 		time.sleep(0.2)
 
 except KeyboardInterrupt:
